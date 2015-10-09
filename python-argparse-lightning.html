@@ -795,6 +795,22 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
+<h3>Painful Example</h3>
+<div class="slideContent" >
+<p><font size=6></p>
+
+<pre><code>$ ./unhelpful-script.py --maybe-this-switch-works
+Runtime error
+Stacktrace:
+    Line 56: Your fibble is krazaweked.
+</code></pre>
+
+<p></font></p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
 <h3>Example help</h3>
 <div class="slideContent" >
 <p><font size=6></p>
@@ -823,17 +839,18 @@ optional arguments:
 <div class="slideContent" >
 <p><font size=6></p>
 
-<pre><code>mpettis@MAC-231-MPETTIS:~/python-argparse-lightning
-$ ./ex-argparse.py --optarg matt -f 5
+<pre><code>$ ./ex-argparse.py --optarg matt -f 5
 Namespace(flag=True, optarg=&#39;matt&#39;, posarg=5)
 
-mpettis@MAC-231-MPETTIS:~/python-argparse-lightning
 $ ./ex-argparse.py --optarg matt 5
 Namespace(flag=False, optarg=&#39;matt&#39;, posarg=5)
 
-mpettis@MAC-231-MPETTIS:~/python-argparse-lightning
 $ ./ex-argparse.py 5
 Namespace(flag=False, optarg=None, posarg=5)
+
+$ ./ex-argparse.py
+usage: ex-argparse.py [-h] [--optarg OPTARG] [-f] posarg
+ex-argparse.py: error: too few arguments 
 </code></pre>
 
 <p></font></p>
@@ -846,7 +863,6 @@ Namespace(flag=False, optarg=None, posarg=5)
 <div class="slideContent" >
 <ul>
 <li class="fragment">A module for easy parsing of command line switches.</li>
-<li class="fragment">You can use python scripts like other shell utilities.</li>
 </ul>
 
 </div>
@@ -856,8 +872,10 @@ Namespace(flag=False, optarg=None, posarg=5)
 <h3>Why use argparse?</h3>
 <div class="slideContent" >
 <ul>
-<li class="fragment">It&#39;s the Unix way, which is a well-established way.</li>
-<li class="fragment">Allows you to make reusable tools.</li>
+<li class="fragment">You can use python scripts like other shell utilities.</li>
+<li class="fragment">Switches are a well-known API.</li>
+<li class="fragment">Help output format is of a well-known format.</li>
+<li class="fragment">Allows you to make configurable tools.</li>
 <li class="fragment">Those tools can interact with other tools.</li>
 <li class="fragment">Is a way to make you think about simple API design.</li>
 <li class="fragment">Similarly structured packages are used in other languages.</li>

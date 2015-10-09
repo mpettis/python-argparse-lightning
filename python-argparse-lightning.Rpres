@@ -7,6 +7,18 @@ matthew.pettis@gmail.com
 
 https://github.com/mpettis
 
+Painful Example
+========================================================
+
+<font size=6>
+
+    $ ./unhelpful-script.py --maybe-this-switch-works
+    Runtime error
+    Stacktrace:
+        Line 56: Your fibble is krazaweked.
+
+</font>
+
 
 Example help
 ========================================================
@@ -34,17 +46,18 @@ Example usages
 
 <font size=6>
 
-    mpettis@MAC-231-MPETTIS:~/python-argparse-lightning
     $ ./ex-argparse.py --optarg matt -f 5
     Namespace(flag=True, optarg='matt', posarg=5)
     
-    mpettis@MAC-231-MPETTIS:~/python-argparse-lightning
     $ ./ex-argparse.py --optarg matt 5
     Namespace(flag=False, optarg='matt', posarg=5)
     
-    mpettis@MAC-231-MPETTIS:~/python-argparse-lightning
     $ ./ex-argparse.py 5
     Namespace(flag=False, optarg=None, posarg=5)
+    
+    $ ./ex-argparse.py
+    usage: ex-argparse.py [-h] [--optarg OPTARG] [-f] posarg
+    ex-argparse.py: error: too few arguments 
 
 </font>
 
@@ -54,15 +67,16 @@ What is argparse?
 incremental: true
 
 - A module for easy parsing of command line switches.
-- You can use python scripts like other shell utilities.
 
 
 Why use argparse?
 ========================================================
 incremental: true
 
-- It's the Unix way, which is a well-established way.
-- Allows you to make reusable tools.
+- You can use python scripts like other shell utilities.
+- Switches are a well-known API.
+- Help output format is of a well-known format.
+- Allows you to make configurable tools.
 - Those tools can interact with other tools.
 - Is a way to make you think about simple API design.
 - Similarly structured packages are used in other languages.
